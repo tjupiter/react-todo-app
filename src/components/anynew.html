@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock"></div>
+</body>
+<script>
+    const d = new Date();
+    const d2 = new Date(1987, 06, 08, 14, 17)
+    console.log(new Date())
+
+    document.getElementById('clock').innerHTML=d.toDateString() + '<br>'
+    document.getElementById('clock').innerHTML+=d2.toJSON() + '<br>'
+</script>
+</html>
