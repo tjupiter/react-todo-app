@@ -10,11 +10,26 @@
     <div id="clock"></div>
 </body>
 <script>
-    const d = new Date();
+   
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(months[now.getMonth() + 1]);
+    const day = String(now.getDate());
+    const dayOfWeek = String(days[now.getDay()]);
+    const hour = String(now.getHours()).padStart(2, "0");
+    const minute = String(now.getMinutes()).padStart(2, "0");
+
+    const d = `${hour}:${minute} on ${dayOfWeek}, ${day} ${month} ${year}`;
+    console.log(d);
+    
+
     const d2 = new Date(1987, 06, 08, 14, 17)
     console.log(new Date())
 
-    document.getElementById('clock').innerHTML=d.toDateString() + '<br>'
-    document.getElementById('clock').innerHTML+=d2.toJSON() + '<br>'
+    document.getElementById('clock').innerHTML=d + '<br>'
+    document.getElementById('clock').innerHTML+=d2.toLocaleDateString() + '<br>'
 </script>
 </html>

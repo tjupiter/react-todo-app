@@ -14,19 +14,19 @@ function App() {
     {
       id: 1,
       text: 'Finish React Task Tracker',
-      day: 'Feb 2nd at 2:30',
+      day: '14:30 on Friday, 5 February 2022',
       reminder: true,
     },
     {
       id: 2,
-      text: 'Citizenship Ceremony',
-      day: 'Feb 4th at 11:00',
+      text: 'Add Animation to Todo App',
+      day: '17:00 on Thursday, 10 February 2022',
       reminder: true,
     },
     {
       id: 3,
       text: 'Complete Job Application',
-      day: 'Feb 5th at 4:00',
+      day: '12:00 on Monday, 7 February 2022',
       reminder: false,
     },
   ])
