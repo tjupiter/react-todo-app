@@ -20,25 +20,7 @@ const AddTask = ({ onAdd }) => {
         }
 
         // convert Date object to custom string format
-        // should this be a function ?
-        // const convertDate = () => {
-        //     const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        //     const monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-        //     const selectedDate = date;
-        //     const year = selectedDate.getFullYear();
-        //     const month = String(monthsOfTheYear[selectedDate.getMonth() + 1]);
-        //     const dayOfMonth = String(selectedDate.getDate());
-        //     const dayOfWeek = String(daysOfTheWeek[selectedDate.getDay()]);
-        //     const hour = String(selectedDate.getHours()).padStart(2, "0");
-        //     const minute = String(selectedDate.getMinutes()).padStart(2, "0");
-
-        //     const customDate = `${hour}:${minute} on ${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
-
-        //     return day = customDate
-        // }
-        
-        // end of convert
         // should this be a function ?
         const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -55,6 +37,8 @@ const AddTask = ({ onAdd }) => {
 
         const day = customDate
         // end of convert
+        // probably could've just used this: https://www.npmjs.com/package/dateformat
+        // https://moment.github.io/luxon/#/tour
 
 
         onAdd({ text, day, reminder })
