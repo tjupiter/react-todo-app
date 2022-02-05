@@ -1,15 +1,12 @@
 import { useState } from "react";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { motion } from "framer-motion"
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ onAdd, showAddTask }) => {
     const [text, setText] = useState('')
     const [date, setStartDate] = useState(new Date())
     const [reminder, setReminder] = useState(false)
-
-    // let handleColor = (time) => {
-    //     return time.getHours() > 12 ? "text-success" : "text-error";
-    // };
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -48,8 +45,31 @@ const AddTask = ({ onAdd }) => {
         setReminder(false)
     }
 
+    const parent = {
+        visible: {
+            opacity: [0, 1], 
+            y:  0,       
+            // y:  [-180, -100, -80, -50, -30, 0],            
+            transition: { 
+                duration: .1, 
+                type: "tween" 
+            }
+        },
+        hidden: { 
+            opacity: 0, 
+            y: -200,
+         },
+    }
+
     return (
-        <form className="add-form" onSubmit={onSubmit}>
+        <motion.form 
+            className="add-form" 
+            onSubmit={onSubmit}
+            initial="hidden"
+            animate="visible"
+            variants={parent}
+            style={{originY:1}}
+            >
             <div className="form-control">
                 <label>Task</label>
                 <input 
@@ -84,7 +104,7 @@ const AddTask = ({ onAdd }) => {
                 value="Save Task" 
                 className="btn btn-block"
             ></input>
-        </form>
+        </motion.form>
     )
 }
 

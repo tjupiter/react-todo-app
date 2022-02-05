@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
+
+
 function App() {
 
   // show/hide add task component
@@ -57,7 +59,7 @@ function App() {
       <Header title='Task Tracker' onToggle={toggleHeader} showAddTask={showAddTask}/>
 
       {
-        showAddTask && <AddTask onAdd={addTask} />
+        showAddTask && <AddTask onAdd={addTask} showAddTask={showAddTask}/>
       }
 
       {tasks.length > 0 
