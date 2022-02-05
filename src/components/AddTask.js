@@ -52,7 +52,7 @@ const AddTask = ({ onAdd, showAddTask }) => {
             // y:  [-180, -100, -80, -50, -30, 0],            
             transition: { 
                 duration: .1, 
-                type: "tween" 
+                type: "spring" 
             }
         },
         hidden: { 

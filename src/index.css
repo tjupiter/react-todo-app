@@ -78,6 +78,7 @@ body {
 
 .add-form {
   margin-bottom: 40px;
+  padding: 0 10px 0 0;
   transition: all 1s ease-in-out;
 }
 
